@@ -1,27 +1,55 @@
-# React + Unity + TypeScript
+# CloudGames
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CloudGames is a modern web application template that combines **React**, **Unity**, and **TypeScript** using [Vite](https://vitejs.dev/) for lightning-fast development and hot module replacement (HMR).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ **Vite** for instant reloads and optimized builds
+- ⚛️ **React** for building interactive UIs
+- 🎮 **Unity** integration for rich game experiences
+- 🦾 **TypeScript** for type safety and better developer experience
+- 🧹 **ESLint** with recommended rules for code quality
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+## Recommended Plugins
 
-```js
-   parserOptions: {
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) (Babel-based Fast Refresh)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) (SWC-based Fast Refresh)
+
+## ESLint Configuration Tips
+
+For production-grade applications, enhance your ESLint setup:
+
+- Update `parserOptions` in your ESLint config:
+  ```js
+  parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
-   },
-```
+  },
+  ```
+- Use stricter TypeScript rules:
+  - Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+  - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Add React linting:
+  - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
+  - Extend with `plugin:react/recommended` and `plugin:react/jsx-runtime`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## License
+
+This project is licensed under the MIT License.
