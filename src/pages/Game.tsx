@@ -1,6 +1,11 @@
-import {Unity, useUnityContext} from "react-unity-webgl";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game() {
+    const navigate = useNavigate();
+
+    // Unity context setup
     const { unityProvider, sendMessage } = useUnityContext({
         loaderUrl: "/UnityReact.loader.js",
         dataUrl: "/UnityReact.data.unityweb",
@@ -8,10 +13,18 @@ function Game() {
         codeUrl: "/UnityReact.wasm.unityweb",
     });
 
+    // Check if user is logged in
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (!storedUser) {
+            alert("You must be logged in to play.");
+            navigate("/login");
+        }
+    }, [navigate]);
+
     function handleClickSpawnEnemies() {
         sendMessage("GameObject", "SpawnEnemies");
     }
-
 
     return (
         <>
@@ -23,13 +36,10 @@ function Game() {
                     <div className="centered-content">
                         <button onClick={handleClickSpawnEnemies}>Spawn Enemies</button>
                     </div>
-
                 </div>
             </div>
-
         </>
     );
 }
 
-
-export default Game
+export default Game;

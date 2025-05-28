@@ -76,3 +76,15 @@
   height: auto;
   margin-right: 1rem;
 }
+
+.input-style {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #a0aec0;
+  border-radius: 8;
+  font-size: 16;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  background: linear-gradient(90deg, #f8fafc 0%, #e2e8f0 100%);
+}
