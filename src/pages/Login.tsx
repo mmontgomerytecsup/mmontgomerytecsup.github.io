@@ -48,8 +48,7 @@ const Login: React.FC = () => {
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                         required
-                        autoFocus
-                        pattern="^[\w\.-]+@[\w\.-]+\.\w{2,}$"
+                        autoFocus  
                         style={{
                             width: "100%",
                             padding: "12px 16px",
